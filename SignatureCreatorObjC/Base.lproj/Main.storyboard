@@ -22,18 +22,78 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xGo-d1-8nH" customClass="SignatureCreatorView">
-                                <rect key="frame" x="20" y="70" width="335" height="577"/>
+                                <rect key="frame" x="20" y="70" width="335" height="497"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cG9-PC-Xfb">
+                                <rect key="frame" x="20" y="607" width="60.5" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="uwH-WV-VWp"/>
+                                </constraints>
+                                <state key="normal" title="Undo"/>
+                                <connections>
+                                    <action selector="optionButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hci-RK-6Xw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BhQ-fD-ozI">
+                                <rect key="frame" x="90.5" y="607" width="60" height="40"/>
+                                <state key="normal" title="Redo"/>
+                                <connections>
+                                    <action selector="optionButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lyK-dT-OuR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uXe-cW-PCt">
+                                <rect key="frame" x="158.5" y="607" width="60.5" height="40"/>
+                                <state key="normal" title="save"/>
+                                <connections>
+                                    <action selector="optionButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LdY-1Z-je8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gq2-Ev-23i">
+                                <rect key="frame" x="227" y="607" width="60" height="40"/>
+                                <state key="normal" title="render"/>
+                                <connections>
+                                    <action selector="optionButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W7w-Vl-Q7n"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hx8-6I-qat">
+                                <rect key="frame" x="295" y="607" width="60" height="40"/>
+                                <state key="normal" title="reset"/>
+                                <connections>
+                                    <action selector="optionButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="55X-pS-AXq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xGo-d1-8nH" secondAttribute="bottom" constant="20" id="3Qc-XH-aie"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xGo-d1-8nH" secondAttribute="bottom" constant="100" id="3Qc-XH-aie"/>
+                            <constraint firstItem="BhQ-fD-ozI" firstAttribute="width" secondItem="uXe-cW-PCt" secondAttribute="width" id="Ab0-No-OFK"/>
                             <constraint firstItem="xGo-d1-8nH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="FSb-hd-Ux8"/>
+                            <constraint firstItem="cG9-PC-Xfb" firstAttribute="width" secondItem="BhQ-fD-ozI" secondAttribute="width" id="Fw7-sC-ezW"/>
+                            <constraint firstItem="gq2-Ev-23i" firstAttribute="leading" secondItem="uXe-cW-PCt" secondAttribute="trailing" constant="8" id="HZM-gP-QMQ"/>
                             <constraint firstAttribute="trailing" secondItem="xGo-d1-8nH" secondAttribute="trailing" constant="20" id="KNe-fA-zTB"/>
+                            <constraint firstItem="BhQ-fD-ozI" firstAttribute="leading" secondItem="cG9-PC-Xfb" secondAttribute="trailing" constant="10" id="Oqi-O9-u8Z"/>
+                            <constraint firstItem="cG9-PC-Xfb" firstAttribute="top" secondItem="BhQ-fD-ozI" secondAttribute="top" id="Peb-4E-e0w"/>
+                            <constraint firstAttribute="trailing" secondItem="Hx8-6I-qat" secondAttribute="trailing" constant="20" id="VSs-KA-kYb"/>
+                            <constraint firstItem="gq2-Ev-23i" firstAttribute="bottom" secondItem="Hx8-6I-qat" secondAttribute="bottom" id="XZ2-O5-KH6"/>
+                            <constraint firstItem="cG9-PC-Xfb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="ZSK-yj-hhE"/>
+                            <constraint firstItem="uXe-cW-PCt" firstAttribute="leading" secondItem="BhQ-fD-ozI" secondAttribute="trailing" constant="8" id="aKH-wA-7EB"/>
+                            <constraint firstItem="uXe-cW-PCt" firstAttribute="bottom" secondItem="gq2-Ev-23i" secondAttribute="bottom" id="aZz-gp-5Cv"/>
+                            <constraint firstItem="BhQ-fD-ozI" firstAttribute="bottom" secondItem="uXe-cW-PCt" secondAttribute="bottom" id="eI4-Zt-spS"/>
+                            <constraint firstItem="gq2-Ev-23i" firstAttribute="width" secondItem="Hx8-6I-qat" secondAttribute="width" id="eVM-nl-MeS"/>
+                            <constraint firstItem="Hx8-6I-qat" firstAttribute="leading" secondItem="gq2-Ev-23i" secondAttribute="trailing" constant="8" id="lP3-nc-fxp"/>
+                            <constraint firstItem="uXe-cW-PCt" firstAttribute="top" secondItem="gq2-Ev-23i" secondAttribute="top" id="mmC-58-mTU"/>
+                            <constraint firstItem="gq2-Ev-23i" firstAttribute="top" secondItem="Hx8-6I-qat" secondAttribute="top" id="poL-bM-JYU"/>
+                            <constraint firstItem="BhQ-fD-ozI" firstAttribute="top" secondItem="uXe-cW-PCt" secondAttribute="top" id="rJB-NF-VNQ"/>
+                            <constraint firstItem="uXe-cW-PCt" firstAttribute="width" secondItem="gq2-Ev-23i" secondAttribute="width" id="sQz-J1-oe8"/>
+                            <constraint firstItem="cG9-PC-Xfb" firstAttribute="bottom" secondItem="BhQ-fD-ozI" secondAttribute="bottom" id="u50-Ym-RCB"/>
                             <constraint firstItem="xGo-d1-8nH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="wNB-eb-dhp"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cG9-PC-Xfb" secondAttribute="bottom" constant="20" id="yxQ-EY-vAx"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="signatureView" destination="xGo-d1-8nH" id="tga-Pg-KcR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -11,14 +11,25 @@
 @interface SignatureCreatorView : UIView
 
 @property (nonatomic) CGFloat lineWidth;
-@property (nonatomic, strong) UIColor *signatureColor;
-
-- (void)reset;
-
-- (UIImage *)save;
+@property (nonatomic, strong) UIColor *_Nonnull signatureColor;
 
 - (void)undo;
 - (void)redo;
+
+- (void)reset;
+
+/**
+ * The app's Info.plist must contain an NSPhotoLibraryUsageDescription key with a string value explaining to the user how the app uses this data.
+ */
+- (void)saveSignatureWithCompletionHandler:(nullable void(^)(BOOL success, NSError *__nullable error))completionHandler;
+
+/**
+ * The app's Info.plist must contain an NSPhotoLibraryUsageDescription key with a string value explaining to the user how the app uses this data.
+ */
+- (void)saveSignatureWithBlendMode:(CGBlendMode)blendMode completionHandler:(nullable void(^)(BOOL success, NSError *__nullable error))completionHandler;
+
+- (UIImage *__nullable)renderSignature;
+- (UIImage *__nullable)renderSignatureWithBlendMode:(CGBlendMode)blendMode;
 
 
 @end
